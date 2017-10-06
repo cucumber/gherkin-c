@@ -91,11 +91,11 @@ int Compiler_compile(Compiler* compiler, const GherkinDocument* gherkin_document
                 if (!example_table->table_header) {
                     continue;
                 }
-                const PickleTags* tags = create_pickle_tags(feature->tags, scenario_outline->tags, example_table->tags);
                 int l;
                 for (l = 0; l < example_table->table_body->row_count; ++l) {
                     const TableRow* table_row = &example_table->table_body->table_rows[l];
                     const PickleLocations* locations = PickleLocations_new_double(table_row->location.line, table_row->location.column, scenario_outline->location.line, scenario_outline->location.column);
+                    const PickleTags* tags = create_pickle_tags(feature->tags, scenario_outline->tags, example_table->tags);
                     PickleSteps* steps = (PickleSteps*)malloc(sizeof(PickleSteps));
                     steps->step_count = scenario_outline->steps->step_count +  + background_step_count;
                     steps->steps = (PickleStep*)malloc(steps->step_count * sizeof(PickleStep));
