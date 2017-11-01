@@ -2,21 +2,24 @@
 
 <h2>Build instruction:</h2>
 
-mkdir build<br>
-cd build<br>
-cmake ..<br>
-cmake --build . --target install<br>
+```
+mkdir build
+cd build
+cmake ..
+cmake --build . --target install
+```
 
 ![](https://raw.githubusercontent.com/Pwera/gherkin-c/master/gherkin.gif)
 
 You can use this library in your project like this<br>
-cmake_minimum_required(VERSION 3.0) <br>
-project(gherkincsample)<br>
-list(APPEND CMAKE_PREFIX_PATH "INSTALLATION_DIRECTORY")<br>
-set(CMAKE_CXX_STANDARD 14)<br>
-find_package(gherkin REQUIRED)<br>
-add_executable(gherkincsample main.cpp)<br>
-target_link_libraries(gherkincsample gherkin::gherkin)<br>
-
+```
+cmake_minimum_required(VERSION 3.0)
+project(gherkincsample)
+list(APPEND CMAKE_PREFIX_PATH "INSTALLATION_DIRECTORY")
+set(CMAKE_CXX_STANDARD 11)
+find_package(gherkin REQUIRED)
+add_executable(gherkincsample main.cpp)
+target_link_libraries(gherkincsample gherkin::gherkin)
+```
 
 [The docs are here](https://docs.cucumber.io/).
