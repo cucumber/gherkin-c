@@ -10,6 +10,8 @@ cmake ..
 
 cmake --build . --target install
 
+[![https://github.com/Pwera/gherkin-c/gherkin.gif|alt=octocat]()]
+
 You ca use this library in your project like this
 
 cmake_minimum_required(VERSION 3.0)
