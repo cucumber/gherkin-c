@@ -10,7 +10,7 @@ cmake ..
 
 cmake --build . --target install
 
-[![https://github.com/Pwera/gherkin-c/gherkin.gif|alt=octocat]()]
+[![https://github.com/Pwera/gherkin-c/blob/master/gherkin.gif|alt=octocat]()]
 
 You ca use this library in your project like this
 
