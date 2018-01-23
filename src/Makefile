@@ -132,6 +132,6 @@ GHERKIN_CLI_OBJS= \
 	$(MKDIR_CMD) $(dir $@)
 	$(LD) $(LD_FLAGS) $(GENERATE_TOKEN_OBJS) -L../libs/ -lgherkin $(LD_LIBS) -o $@
 
-../bin/gherkin$(EXT): ../libs/libgherkin.a $(GHERKIN_CLI_OBJS) Makefile
+../bin/gherkin$(EXT): ../libs/libgherkin.a ../libs/libgherkin.so $(GHERKIN_CLI_OBJS) Makefile
 	$(MKDIR_CMD) $(dir $@)
 	$(LD) $(LD_FLAGS) $(GHERKIN_CLI_OBJS) -L../libs/ -lgherkin $(LD_LIBS) -o $@
