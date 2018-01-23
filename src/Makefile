@@ -1,6 +1,6 @@
-GCC_FLAGS=-c -Wall -Werror -g -fPIC  -lm
+GCC_FLAGS=-c -Wall -Werror -g -fPIC 
 CLANG_FLAGS=-c -Wall -Werror -g -fPIC 
-GCC_SO_FLAGS= -lm -shared -Wl,-soname,libgherkin.so.1
+GCC_SO_FLAGS= -shared -Wl,-soname,libgherkin.so.1
 
 ifeq ($(CC),i686-w64-mingw32-gcc)
 	CC=i686-w64-mingw32-gcc
