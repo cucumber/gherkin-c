@@ -1,11 +1,12 @@
 GCC_FLAGS=-c -Wall -Werror -g -fPIC 
 CLANG_FLAGS=-c -Wall -Werror -g -fPIC 
 GCC_SO_FLAGS= -shared -Wl,-soname,libgherkin.so.1
+MINGW_FLAGS=-c -Wall -Werror -g 
 
 ifeq ($(CC),i686-w64-mingw32-gcc)
 	CC=i686-w64-mingw32-gcc
 	LD=i686-w64-mingw32-gcc
-	CC_FLAGS=$(GCC_FLAGS)
+	CC_FLAGS=$(MINGW_FLAGS)
 	AR=i686-w64-mingw32-ar
 	EXT=.exe
 else ifeq ($(CC),clang)
