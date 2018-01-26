@@ -10,15 +10,15 @@ os:
   - osx
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; sudo dpkg --add-architecture i386                       ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; sudo add-apt-repository -y ppa:ubuntu-wine/ppa          ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; sudo apt-get update -qq                                 ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; sudo apt-get remove -qq -y mingw32                      ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; sudo apt-get install -q -y mingw-w64                    ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; sudo apt-get install --no-install-recommends -y wine1.8 ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew install mingw-w64                                    ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew cask install xquartz                                 ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew install wine                                         ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo dpkg --add-architecture i386                       ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository -y ppa:ubuntu-wine/ppa          ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq                                 ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get remove -qq -y mingw32                      ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -q -y mingw-w64                    ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends -y wine1.8 ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install mingw-w64                                    ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install xquartz                                 ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install wine                                         ; fi
 
 script: make CC=${CC}
 
