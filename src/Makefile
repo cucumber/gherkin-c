@@ -1,6 +1,6 @@
 GCC_FLAGS=-c -Wall -Werror -g -fPIC 
 CLANG_FLAGS=-c -Wall -Werror -g -fPIC 
-GCC_SO_FLAGS= -shared -Wl,-soname,libgherkin.so.$(shell cat ../VERSION)
+GCC_SO_FLAGS= -shared
 MINGW_FLAGS=-c -Wall -Werror -g 
 
 ifeq ($(CC),i686-w64-mingw32-gcc)
