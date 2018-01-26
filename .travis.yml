@@ -5,6 +5,9 @@ compiler:
   - clang
   - gcc
   - i686-w64-mingw32-gcc
+os:
+  - linux
+  - osx
 
 before_install:
   - sudo dpkg --add-architecture i386
