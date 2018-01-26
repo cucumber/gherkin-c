@@ -56,18 +56,6 @@ libs_so: ./include/rule_type.h src/parser.c src/dialect.c $(SRC_FILES) src/Makef
 	cd src; $(MAKE) CC=$(CC) $@
 .PHONY: libs_so
 
-install: libs_so
-	cp ./libs/libgherkin.so.1.0 /usr/lib/libgherkin.so.1.0
-	ln -s /usr/lib/libgherkin.so.1.0 /usr/lib/libgherkin.so
-	mkdir -p /usr/include/gherkin
-	cp ./include/*.h /usr/include/gherkin
-.PHONY: install
-
-uninstall:
-	rm /usr/lib/libgherkin.so /usr/lib/libgherkin.so.1.0
-	rm -rf /usr/include/gherkin
-.PHONY: uninstall
-
 .run: cli $(GHERKIN) $(GOOD_FEATURE_FILES)
 	$(RUN_GHERKIN) $(GOOD_FEATURE_FILES) | jq . > /dev/null
 	touch .run
