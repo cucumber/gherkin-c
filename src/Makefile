@@ -27,6 +27,8 @@ LD_LIBS=-lm
 RM_CMD=rm -rf
 MKDIR_CMD=mkdir -p
 
+VERSION=$(shell cat ../VERSION)
+
 all: \
     cli \
 	../bin/gherkin_generate_tokens$(EXT) \
@@ -36,7 +38,7 @@ cli: ../bin/gherkin$(EXT)
 
 libs: ../libs/libgherkin.a
 
-libs_so: ../libs/libgherkin.so
+libs_so: ../libs/libgherkin.so.$(VERSION)
 
 clean:
 	$(RM_CMD) ../bin ../objs ../libs
@@ -126,9 +128,9 @@ GHERKIN_CLI_OBJS= \
 	$(MKDIR_CMD) $(dir $@)
 	$(AR) $(AR_FLAGS) $@ $(UTILITIES_OBJS) $(PARSER_OBJS) $(AST_OBJS) $(COMPILER_OBJS) $(PICKLES_OBJS) $(EVENT_OBJS)
 
-../libs/libgherkin.so: $(UTILITIES_OBJS) $(PARSER_OBJS) $(AST_OBJS) $(COMPILER_OBJS) $(PICKLES_OBJS) $(EVENT_OBJS) Makefile
+../libs/libgherkin.so.$(VERSION): $(UTILITIES_OBJS) $(PARSER_OBJS) $(AST_OBJS) $(COMPILER_OBJS) $(PICKLES_OBJS) $(EVENT_OBJS) Makefile
 	$(MKDIR_CMD) $(dir $@)
-	$(CC) $(GCC_SO_FLAGS) -o ../libs/libgherkin.so.$(shell cat ../VERSION) $(UTILITIES_OBJS) $(PARSER_OBJS) $(AST_OBJS) $(COMPILER_OBJS) $(PICKLES_OBJS) $(EVENT_OBJS)
+	$(CC) $(GCC_SO_FLAGS) $(UTILITIES_OBJS) $(PARSER_OBJS) $(AST_OBJS) $(COMPILER_OBJS) $(PICKLES_OBJS) $(EVENT_OBJS) -o $@
 
 ../bin/gherkin_generate_tokens$(EXT): ../libs/libgherkin.a $(GENERATE_TOKEN_OBJS) Makefile
 	$(MKDIR_CMD) $(dir $@)
