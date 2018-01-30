@@ -28,8 +28,8 @@ before_install:
 script: if [[ "$CC" == "i686-w64-mingw32-gcc" ]] && [[ "$TRAVIS_OS_NAME" == "osx"
   ]]; then make CC=${CC} cli; else make CC=${CC} ; fi
 addons:
-  artifacts: true
-  s3_region: "eu-west-2"
+  artifacts:
+    s3_region: "eu-west-2"
 env:
   global:
   - ARTIFACTS_PATHS="./bin:./libs"
