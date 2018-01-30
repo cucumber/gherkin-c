@@ -58,7 +58,7 @@ libs_so: ./include/rule_type.h src/parser.c src/dialect.c $(SRC_FILES) src/Makef
 
 .run: cli $(GHERKIN) $(GOOD_FEATURE_FILES)
 	$(RUN_GHERKIN) $(GOOD_FEATURE_FILES) | jq . > /dev/null
-	touch .run
+	touch $@
 
 ./include/rule_type.h: gherkin.berp gherkin-c-rule-type.razor
 	mono berp/berp.exe -g gherkin.berp -t gherkin-c-rule-type.razor -o $@

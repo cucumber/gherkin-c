@@ -1,6 +1,6 @@
 GCC_FLAGS=-c -Wall -Werror -g -fPIC 
 CLANG_FLAGS=-c -Wall -Werror -g -fPIC 
-GCC_SO_FLAGS= -shared
+GCC_SO_FLAGS=-shared
 MINGW_FLAGS=-c -Wall -Werror -g 
 
 ifeq ($(CC),i686-w64-mingw32-gcc)
@@ -30,15 +30,19 @@ MKDIR_CMD=mkdir -p
 VERSION=$(shell cat ../VERSION)
 
 all: \
-    cli \
+  cli \
 	../bin/gherkin_generate_tokens$(EXT) \
 	libs_so
+.PHONY: all
 
 cli: ../bin/gherkin$(EXT)
+.PHONY: cli
 
 libs: ../libs/libgherkin.a
+.PHONY: libs
 
 libs_so: ../libs/libgherkin.so.$(VERSION)
+.PHONY: libs_so
 
 clean:
 	$(RM_CMD) ../bin ../objs ../libs
