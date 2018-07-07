@@ -1,4 +1,5 @@
-PROJECT(gherkin C)
+PROJECT(gherkin)
+include(GenerateExportHeader)
 cmake_minimum_required(VERSION 3.0)
 # Install library & headers in your directory
 #SET(CMAKE_INSTALL_PREFIX  "")
@@ -67,6 +68,16 @@ LIST(APPEND GHERKIN_CLI
 add_library(gherkin SHARED ${GHERKIN_SRS})
 target_include_directories(gherkin PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include;${CMAKE_CURRENT_SOURCE_DIR}/src>")
+	
+generate_export_header(gherkin
+    EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/include/exports.h"
+)
+
+set_target_properties(
+    gherkin
+    PROPERTIES
+        DEFINE_SYMBOL gherkin_EXPORTS
+)
 
 add_executable(gherkinexe ${GHERKIN_CLI})
 target_link_libraries(gherkinexe gherkin)
@@ -91,6 +102,15 @@ FOREACH(ENTITY ${GOOD_FEATURE_FILES})
             DEPENDS invo
     )
 ENDFOREACH()
+
+############ Generic Compiler Flags ############
+
+if(CMAKE_C_COMPILER_ID MATCHES "GNU")
+    # CMake generates the GHERKIN_EXPORT attritbute with __attribute__((visibility("default")))
+    # in this case, and it being ignored is not relevant for us here.
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-attributes")
+endif()
+
 ############ Installation section ############
 set(include_install_dir "include")
 set(lib_install_dir "lib/")
