@@ -18,7 +18,7 @@ GHERKIN_EXPORT typedef void (*delete_function) (TokenScanner*);
 
 struct TokenScanner {
     read_function read;
-    delete_function delete;
+    delete_function scanner_delete;
 };
 
 GHERKIN_EXPORT void TokenScanner_delete(TokenScanner* token_scanner);
