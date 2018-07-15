@@ -25,9 +25,9 @@ typedef struct Feature {
     const ScenarioDefinitions* scenario_definitions;
 } Feature;
 
-const Feature* Feature_new(Location location, const wchar_t* language, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Tags* tags, const ScenarioDefinitions* scenario_definitions);
+GHERKIN_EXPORT const Feature* Feature_new(Location location, const wchar_t* language, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Tags* tags, const ScenarioDefinitions* scenario_definitions);
 
-void Feature_delete(const Feature* feature);
+GHERKIN_EXPORT void Feature_delete(const Feature* feature);
 
 #ifdef __cplusplus
 }

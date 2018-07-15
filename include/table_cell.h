@@ -3,6 +3,7 @@
 
 #include <wchar.h>
 
+#include "exports.h"
 #include "ast.h"
 #include "location.h"
 
@@ -22,13 +23,13 @@ typedef struct TableCells {
     TableCell* table_cells;
 } TableCells;
 
-const TableCell* TableCell_new(Location location, const wchar_t* value);
+GHERKIN_EXPORT const TableCell* TableCell_new(Location location, const wchar_t* value);
 
-void TableCell_delete(const TableCell* table_cell);
+GHERKIN_EXPORT void TableCell_delete(const TableCell* table_cell);
 
-void TableCell_transfer(TableCell* to_table_cell, TableCell* from_table_cell);
+GHERKIN_EXPORT void TableCell_transfer(TableCell* to_table_cell, TableCell* from_table_cell);
 
-void TableCells_delete(const TableCells* table_cells);
+GHERKIN_EXPORT void TableCells_delete(const TableCells* table_cells);
 
 #ifdef __cplusplus
 }

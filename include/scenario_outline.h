@@ -25,11 +25,11 @@ typedef struct ScenarioOutline {
     const Examples* examples;
 } ScenarioOutline;
 
-const ScenarioOutline* ScenarioOutline_new(Location location, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Tags* tags, const Steps* steps, const Examples* examples);
+GHERKIN_EXPORT const ScenarioOutline* ScenarioOutline_new(Location location, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Tags* tags, const Steps* steps, const Examples* examples);
 
-void ScenarioOutline_delete(const ScenarioOutline* scenario_outline);
+GHERKIN_EXPORT void ScenarioOutline_delete(const ScenarioOutline* scenario_outline);
 
-void ScenarioOutline_transfer(ScenarioOutline* to_scenario_outline, ScenarioOutline* from_scenario_outline);
+GHERKIN_EXPORT void ScenarioOutline_transfer(ScenarioOutline* to_scenario_outline, ScenarioOutline* from_scenario_outline);
 
 #ifdef __cplusplus
 }

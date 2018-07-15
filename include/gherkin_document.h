@@ -16,9 +16,9 @@ typedef struct GherkinDocument {
     const Comments* comments;
 } GherkinDocument;
 
-const GherkinDocument* GherkinDocument_new(const Feature* feature, const Comments* comments);
+GHERKIN_EXPORT const GherkinDocument* GherkinDocument_new(const Feature* feature, const Comments* comments);
 
-void GherkinDocument_delete(const GherkinDocument* gherkin_document);
+GHERKIN_EXPORT void GherkinDocument_delete(const GherkinDocument* gherkin_document);
 
 #ifdef __cplusplus
 }

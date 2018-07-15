@@ -17,9 +17,9 @@ typedef struct PickleString {
     wchar_t* content;
 } PickleString;
 
-const PickleString* PickleString_new(const wchar_t* content, int line, int column, const wchar_t* content_type);
+GHERKIN_EXPORT const PickleString* PickleString_new(const wchar_t* content, int line, int column, const wchar_t* content_type);
 
-void PickleString_delete(const PickleString* pickle_string);
+GHERKIN_EXPORT void PickleString_delete(const PickleString* pickle_string);
 
 #ifdef __cplusplus
 }

@@ -16,13 +16,13 @@ typedef struct PickleRows {
     PickleRow* pickle_rows;
 } PickleRows;
 
-const PickleRow* PickleRow_new(const PickleCells* pickle_cells);
+GHERKIN_EXPORT const PickleRow* PickleRow_new(const PickleCells* pickle_cells);
 
-void PickleRow_delete(const PickleRow* pickle_row);
+GHERKIN_EXPORT void PickleRow_delete(const PickleRow* pickle_row);
 
-void PickleRow_transfer(PickleRow* to_pickle_row, PickleRow* from_pickle_row);
+GHERKIN_EXPORT void PickleRow_transfer(PickleRow* to_pickle_row, PickleRow* from_pickle_row);
 
-void PickleRows_delete(const PickleRows* pickle_rows);
+GHERKIN_EXPORT void PickleRows_delete(const PickleRows* pickle_rows);
 
 #ifdef __cplusplus
 }

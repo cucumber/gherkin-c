@@ -3,17 +3,19 @@
 
 #include <wchar.h>
 
+#include "exports.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 typedef struct FileReader FileReader;
 
-FileReader* FileReader_new(const char* const file_name);
+GHERKIN_EXPORT FileReader* FileReader_new(const char* const file_name);
 
-const wchar_t* FileReader_read(FileReader* file_reader);
+GHERKIN_EXPORT const wchar_t* FileReader_read(FileReader* file_reader);
 
-void FileReader_delete(FileReader* file_reader);
+GHERKIN_EXPORT void FileReader_delete(FileReader* file_reader);
 
 #ifdef __cplusplus
 }

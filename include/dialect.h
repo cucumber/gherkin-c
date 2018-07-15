@@ -3,6 +3,8 @@
 
 #include <wchar.h>
 
+#include "exports.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -26,7 +28,7 @@ typedef struct Dialect {
     const Keywords* when_keywords;
 } Dialect;
 
-const Dialect* Dialect_for(const wchar_t* language);
+GHERKIN_EXPORT const Dialect* Dialect_for(const wchar_t* language);
 
 #ifdef __cplusplus
 }

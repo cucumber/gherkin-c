@@ -21,13 +21,13 @@ typedef struct PickleSteps {
     PickleStep* steps;
 } PickleSteps;
 
-const PickleStep* PickleStep_new(const PickleLocations* locations, const wchar_t* text, const PickleArgument* argument);
+GHERKIN_EXPORT const PickleStep* PickleStep_new(const PickleLocations* locations, const wchar_t* text, const PickleArgument* argument);
 
-void PickleStep_delete(const PickleStep* pickle_step);
+GHERKIN_EXPORT void PickleStep_delete(const PickleStep* pickle_step);
 
-void PickleStep_transfer(PickleStep* to_pickle_step, PickleStep* from_pickle_step);
+GHERKIN_EXPORT void PickleStep_transfer(PickleStep* to_pickle_step, PickleStep* from_pickle_step);
 
-void PickleSteps_delete(const PickleSteps* pickle_steps);
+GHERKIN_EXPORT void PickleSteps_delete(const PickleSteps* pickle_steps);
 
 #ifdef __cplusplus
 }

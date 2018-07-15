@@ -3,6 +3,7 @@
 
 #include <wchar.h>
 
+#include "exports.h"
 #include "ast.h"
 #include "location.h"
 
@@ -22,13 +23,13 @@ typedef struct Tags {
     Tag* tags;
 } Tags;
 
-const Tag* Tag_new(Location location, const wchar_t* name);
+GHERKIN_EXPORT const Tag* Tag_new(Location location, const wchar_t* name);
 
-void Tag_delete(const Tag* tag);
+GHERKIN_EXPORT void Tag_delete(const Tag* tag);
 
-void Tag_transfer(Tag* to_tag, Location location, wchar_t** name_ptr);
+GHERKIN_EXPORT void Tag_transfer(Tag* to_tag, Location location, wchar_t** name_ptr);
 
-void Tags_delete(const Tags* tags);
+GHERKIN_EXPORT void Tags_delete(const Tags* tags);
 
 #ifdef __cplusplus
 }

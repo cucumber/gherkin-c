@@ -23,11 +23,11 @@ typedef struct Scenario {
     const Steps* steps;
 } Scenario;
 
-const Scenario* Scenario_new(Location location, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Tags* tags, const Steps* steps);
+GHERKIN_EXPORT const Scenario* Scenario_new(Location location, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Tags* tags, const Steps* steps);
 
-void Scenario_delete(const Scenario* scenario);
+GHERKIN_EXPORT void Scenario_delete(const Scenario* scenario);
 
-void Scenario_transfer(Scenario* to_scenario, Scenario* from_scenario);
+GHERKIN_EXPORT void Scenario_transfer(Scenario* to_scenario, Scenario* from_scenario);
 
 #ifdef __cplusplus
 }

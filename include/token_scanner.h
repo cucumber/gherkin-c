@@ -3,6 +3,7 @@
 
 #include <wchar.h>
 
+#include "exports.h"
 #include "token.h"
 
 #ifdef __cplusplus
@@ -11,16 +12,16 @@ extern "C" {
 
 typedef struct TokenScanner TokenScanner;
 
-typedef Token* (*read_function) (TokenScanner*);
+GHERKIN_EXPORT typedef Token* (*read_function) (TokenScanner*);
 
-typedef void (*delete_function) (TokenScanner*);
+GHERKIN_EXPORT typedef void (*delete_function) (TokenScanner*);
 
 struct TokenScanner {
     read_function read;
     delete_function delete;
 };
 
-void TokenScanner_delete(TokenScanner* token_scanner);
+GHERKIN_EXPORT void TokenScanner_delete(TokenScanner* token_scanner);
 
 #ifdef __cplusplus
 }

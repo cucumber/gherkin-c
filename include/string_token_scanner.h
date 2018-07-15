@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-TokenScanner* StringTokenScanner_new(const wchar_t* const source);
+GHERKIN_EXPORT TokenScanner* StringTokenScanner_new(const wchar_t* const source);
 
 #ifdef __cplusplus
 }
