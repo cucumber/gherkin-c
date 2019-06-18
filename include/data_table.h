@@ -16,11 +16,11 @@ typedef struct DataTable {
     const TableRows* rows;
 } DataTable;
 
-const DataTable* DataTable_new(Location location, const TableRows* rows);
+GHERKIN_EXPORT const DataTable* DataTable_new(Location location, const TableRows* rows);
 
-void DataTable_delete(const DataTable* data_table);
+GHERKIN_EXPORT void DataTable_delete(const DataTable* data_table);
 
-void DataTable_transfer(DataTable* to_data_table, DataTable* from_data_table);
+GHERKIN_EXPORT void DataTable_transfer(DataTable* to_data_table, DataTable* from_data_table);
 
 #ifdef __cplusplus
 }

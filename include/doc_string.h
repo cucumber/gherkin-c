@@ -3,6 +3,7 @@
 
 #include <wchar.h>
 
+#include "exports.h"
 #include "ast.h"
 #include "location.h"
 
@@ -18,9 +19,9 @@ typedef struct DocString {
     const wchar_t* content;
 } DocString;
 
-const DocString* DocString_new(Location location, const wchar_t* content_type, const wchar_t* content);
+GHERKIN_EXPORT const DocString* DocString_new(Location location, const wchar_t* content_type, const wchar_t* content);
 
-void DocString_delete(const DocString* doc_string);
+GHERKIN_EXPORT void DocString_delete(const DocString* doc_string);
 
 #ifdef __cplusplus
 }

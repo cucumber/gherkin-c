@@ -13,9 +13,9 @@ typedef struct PickleTable {
     const PickleRows* rows;
 } PickleTable;
 
-const PickleTable* PickleTable_new(const PickleRows* rows);
+GHERKIN_EXPORT const PickleTable* PickleTable_new(const PickleRows* rows);
 
-void PickleTable_delete(const PickleTable* pickle_table);
+GHERKIN_EXPORT void PickleTable_delete(const PickleTable* pickle_table);
 
 #ifdef __cplusplus
 }

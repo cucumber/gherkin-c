@@ -3,15 +3,17 @@
 
 #include <stdio.h>
 
+#include "exports.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 typedef struct Event Event;
 
-typedef void (*event_delete_function) (const Event*);
+GHERKIN_EXPORT typedef void (*event_delete_function) (const Event*);
 
-typedef void (*event_print_function) (const Event*, FILE* file);
+GHERKIN_EXPORT typedef void (*event_print_function) (const Event*, FILE* file);
 
 typedef enum EventType {
     Gherkin_SourceEvent,
@@ -26,9 +28,9 @@ struct Event {
     EventType event_type;
 };
 
-void Event_delete(const Event* event);
+GHERKIN_EXPORT void Event_delete(const Event* event);
 
-void Event_print(const Event* event, FILE* file);
+GHERKIN_EXPORT void Event_print(const Event* event, FILE* file);
 
 #ifdef __cplusplus
 }

@@ -3,6 +3,7 @@
 
 #include <wchar.h>
 
+#include "exports.h"
 #include "ast.h"
 #include "location.h"
 
@@ -29,13 +30,13 @@ typedef struct Steps {
     Step* steps;
 } Steps;
 
-const Step* Step_new(Location location, const wchar_t* keyword, const wchar_t* text, const StepArgument* argument);
+GHERKIN_EXPORT const Step* Step_new(Location location, const wchar_t* keyword, const wchar_t* text, const StepArgument* argument);
 
-void Step_delete(const Step* step);
+GHERKIN_EXPORT void Step_delete(const Step* step);
 
-void Step_transfer(Step* to_step, Step* from_step);
+GHERKIN_EXPORT void Step_transfer(Step* to_step, Step* from_step);
 
-void Steps_delete(const Steps* steps);
+GHERKIN_EXPORT void Steps_delete(const Steps* steps);
 
 #ifdef __cplusplus
 }

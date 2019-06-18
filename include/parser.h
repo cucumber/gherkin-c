@@ -14,15 +14,15 @@ extern "C" {
 
 typedef struct Parser Parser;
 
-Parser* Parser_new(Builder* builder);
+GHERKIN_EXPORT Parser* Parser_new(Builder* builder);
 
-void Parser_delete(Parser* parser);
+GHERKIN_EXPORT void Parser_delete(Parser* parser);
 
-int Parser_parse(Parser* parser, TokenMatcher* token_matcher, TokenScanner* token_scanner);
+GHERKIN_EXPORT int Parser_parse(Parser* parser, TokenMatcher* token_matcher, TokenScanner* token_scanner);
 
-bool Parser_has_more_errors(Parser* parser);
+GHERKIN_EXPORT bool Parser_has_more_errors(Parser* parser);
 
-Error* Parser_next_error(Parser* parser);
+GHERKIN_EXPORT Error* Parser_next_error(Parser* parser);
 
 #ifdef __cplusplus
 }

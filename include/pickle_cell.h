@@ -19,13 +19,13 @@ typedef struct PickleCells {
     PickleCell* pickle_cells;
 } PickleCells;
 
-const PickleCell* PickleCell_new(const PickleLocation* location, const wchar_t* value);
+GHERKIN_EXPORT const PickleCell* PickleCell_new(const PickleLocation* location, const wchar_t* value);
 
-void PickleCell_delete(const PickleCell* pickle_cell);
+GHERKIN_EXPORT void PickleCell_delete(const PickleCell* pickle_cell);
 
-void PickleCell_transfer(PickleCell* to_pickle_cell, PickleCell* from_pickle_cell);
+GHERKIN_EXPORT void PickleCell_transfer(PickleCell* to_pickle_cell, PickleCell* from_pickle_cell);
 
-void PickleCells_delete(const PickleCells* pickle_cells);
+GHERKIN_EXPORT void PickleCells_delete(const PickleCells* pickle_cells);
 
 #ifdef __cplusplus
 }

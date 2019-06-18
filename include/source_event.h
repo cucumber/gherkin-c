@@ -2,6 +2,7 @@
 #define GHERKIN_SOURCE_EVENT_H_
 
 #include "event.h"
+#include "exports.h"
 
 #include <wchar.h>
 
@@ -15,7 +16,7 @@ typedef struct SourceEvent {
     const wchar_t* source;
 } SourceEvent;
 
-SourceEvent* SourceEvent_new(const char* uri, const wchar_t* source);
+GHERKIN_EXPORT SourceEvent* SourceEvent_new(const char* uri, const wchar_t* source);
 
 #ifdef __cplusplus
 }

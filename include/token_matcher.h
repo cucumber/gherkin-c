@@ -12,9 +12,9 @@ extern "C" {
 
 typedef struct TokenMatcher TokenMatcher;
 
-typedef void (*matcher_reset_function) (TokenMatcher*);
+GHERKIN_EXPORT typedef void (*matcher_reset_function) (TokenMatcher*);
 
-typedef bool (*match_function) (TokenMatcher*, Token*);
+GHERKIN_EXPORT typedef bool (*match_function) (TokenMatcher*, Token*);
 
 struct TokenMatcher {
     const wchar_t* default_language;
@@ -40,9 +40,9 @@ struct TokenMatcher {
     match_function match_EOF;
 };
 
-TokenMatcher* TokenMatcher_new(const wchar_t* default_language);
+GHERKIN_EXPORT TokenMatcher* TokenMatcher_new(const wchar_t* default_language);
 
-void TokenMatcher_delete(TokenMatcher* token_matcher);
+GHERKIN_EXPORT void TokenMatcher_delete(TokenMatcher* token_matcher);
 
 #ifdef __cplusplus
 }

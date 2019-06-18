@@ -19,11 +19,11 @@ typedef struct PickleTags {
     PickleTag* tags;
 } PickleTags;
 
-void PickleTag_delete(const PickleTag* tag);
+GHERKIN_EXPORT void PickleTag_delete(const PickleTag* tag);
 
-void PickleTag_transfer(PickleTag* to_tag, const wchar_t* name, int line, int column);
+GHERKIN_EXPORT void PickleTag_transfer(PickleTag* to_tag, const wchar_t* name, int line, int column);
 
-void PickleTags_delete(const PickleTags* tags);
+GHERKIN_EXPORT void PickleTags_delete(const PickleTags* tags);
 
 #ifdef __cplusplus
 }

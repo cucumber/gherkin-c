@@ -22,13 +22,13 @@ typedef struct TableRows {
     TableRow* table_rows;
 } TableRows;
 
-const TableRow* TableRow_new(Location location, const TableCells* table_cells);
+GHERKIN_EXPORT const TableRow* TableRow_new(Location location, const TableCells* table_cells);
 
-void TableRow_delete(const TableRow* table_row);
+GHERKIN_EXPORT void TableRow_delete(const TableRow* table_row);
 
-void TableRow_transfer(TableRow* to_table_row, TableRow* from_table_row);
+GHERKIN_EXPORT void TableRow_transfer(TableRow* to_table_row, TableRow* from_table_row);
 
-void TableRows_delete(const TableRows* table_rows);
+GHERKIN_EXPORT void TableRows_delete(const TableRows* table_rows);
 
 #ifdef __cplusplus
 }

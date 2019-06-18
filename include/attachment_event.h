@@ -3,6 +3,7 @@
 
 #include <wchar.h>
 
+#include "exports.h"
 #include "event.h"
 #include "error.h"
 
@@ -17,9 +18,9 @@ typedef struct AttachmentEvent {
     const wchar_t* data;
 } AttachmentEvent;
 
-AttachmentEvent* AttachmentEvent_new(const char* uri, const Location location);
+GHERKIN_EXPORT AttachmentEvent* AttachmentEvent_new(const char* uri, const Location location);
 
-void AttacnmentEvent_transfer_error_text(AttachmentEvent* attachment_event, Error* error);
+GHERKIN_EXPORT void AttacnmentEvent_transfer_error_text(AttachmentEvent* attachment_event, Error* error);
 
 #ifdef __cplusplus
 }

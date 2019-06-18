@@ -4,13 +4,15 @@
 #include <stdio.h>
 #include <wchar.h>
 
+#include "exports.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void PrintUtilities_print_json_string(FILE* file, const wchar_t* text);
+GHERKIN_EXPORT void PrintUtilities_print_json_string(FILE* file, const wchar_t* text);
 
-void PrintUtilities_print_wide_string(FILE* file, const wchar_t* text);
+GHERKIN_EXPORT void PrintUtilities_print_wide_string(FILE* file, const wchar_t* text);
 
 #ifdef __cplusplus
 }

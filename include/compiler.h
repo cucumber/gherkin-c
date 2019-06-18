@@ -3,6 +3,8 @@
 
 #include <stdbool.h>
 #include <wchar.h>
+
+#include "exports.h"
 #include "gherkin_document.h"
 #include "pickle.h"
 
@@ -12,19 +14,19 @@ extern "C" {
 
 typedef struct Compiler Compiler;
 
-Compiler* Compiler_new();
+GHERKIN_EXPORT Compiler* Compiler_new();
 
-void Compiler_delete(Compiler* compiler);
+GHERKIN_EXPORT void Compiler_delete(Compiler* compiler);
 
-int Compiler_compile(Compiler* compiler, const GherkinDocument* gherkin_document);
+GHERKIN_EXPORT int Compiler_compile(Compiler* compiler, const GherkinDocument* gherkin_document);
 
-bool Compiler_has_more_pickles(Compiler* compiler);
+GHERKIN_EXPORT bool Compiler_has_more_pickles(Compiler* compiler);
 
-const Pickle* Compiler_next_pickle(Compiler* compiler);
+GHERKIN_EXPORT const Pickle* Compiler_next_pickle(Compiler* compiler);
 
-bool Compiler_has_more_errors(Compiler* compiler);
+GHERKIN_EXPORT bool Compiler_has_more_errors(Compiler* compiler);
 
-const wchar_t* Compiler_next_error(Compiler* compiler);
+GHERKIN_EXPORT const wchar_t* Compiler_next_error(Compiler* compiler);
 
 #ifdef __cplusplus
 }

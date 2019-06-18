@@ -3,6 +3,7 @@
 
 #include <wchar.h>
 
+#include "exports.h"
 #include "ast.h"
 #include "location.h"
 #include "step.h"
@@ -21,9 +22,9 @@ typedef struct Background {
     const Steps* steps;
 } Background;
 
-const Background* Background_new(Location location, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Steps* steps);
+GHERKIN_EXPORT const Background* Background_new(Location location, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Steps* steps);
 
-void Background_delete(const Background* background);
+GHERKIN_EXPORT void Background_delete(const Background* background);
 
 #ifdef __cplusplus
 }

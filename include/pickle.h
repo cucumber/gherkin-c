@@ -21,9 +21,9 @@ typedef struct Pickle {
     const PickleSteps* steps;
 } Pickle;
 
-const Pickle* Pickle_new(const wchar_t* language, const PickleLocations* locations, const PickleTags* tags, const wchar_t* name, const PickleSteps* steps);
+GHERKIN_EXPORT const Pickle* Pickle_new(const wchar_t* language, const PickleLocations* locations, const PickleTags* tags, const wchar_t* name, const PickleSteps* steps);
 
-void Pickle_delete(const Pickle* pickle);
+GHERKIN_EXPORT void Pickle_delete(const Pickle* pickle);
 
 #ifdef __cplusplus
 }

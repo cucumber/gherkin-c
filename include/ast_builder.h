@@ -8,11 +8,11 @@
 extern "C" {
 #endif
 
-Builder* AstBuilder_new();
+GHERKIN_EXPORT Builder* AstBuilder_new();
 
-void AstBuilder_delete(Builder* builder);
+GHERKIN_EXPORT void AstBuilder_delete(Builder* builder);
 
-const GherkinDocument* AstBuilder_get_result(Builder* builder);
+GHERKIN_EXPORT const GherkinDocument* AstBuilder_get_result(Builder* builder);
 
 #ifdef __cplusplus
 }

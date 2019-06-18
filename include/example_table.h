@@ -29,13 +29,13 @@ typedef struct Examples {
     ExampleTable* example_table;
 } Examples;
 
-const ExampleTable* ExampleTable_new(Location location, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Tags* tags, const TableRow* table_header, const TableRows* table_body);
+GHERKIN_EXPORT const ExampleTable* ExampleTable_new(Location location, const wchar_t* keyword, const wchar_t* name, const wchar_t* description, const Tags* tags, const TableRow* table_header, const TableRows* table_body);
 
-void ExampleTable_delete(const ExampleTable* example_table);
+GHERKIN_EXPORT void ExampleTable_delete(const ExampleTable* example_table);
 
-void ExampleTable_transfer(ExampleTable* to_example_table, ExampleTable* from_example_table);
+GHERKIN_EXPORT void ExampleTable_transfer(ExampleTable* to_example_table, ExampleTable* from_example_table);
 
-void Examples_delete(const Examples* examples);
+GHERKIN_EXPORT void Examples_delete(const Examples* examples);
 
 #ifdef __cplusplus
 }

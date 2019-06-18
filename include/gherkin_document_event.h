@@ -16,7 +16,7 @@ typedef struct GherkinDocumentEvent {
     const GherkinDocument* gherkin_document;
 } GherkinDocumentEvent;
 
-const GherkinDocumentEvent* GherkinDocumentEvent_new(const char* uri, const GherkinDocument* gherkin_document);
+GHERKIN_EXPORT const GherkinDocumentEvent* GherkinDocumentEvent_new(const char* uri, const GherkinDocument* gherkin_document);
 
 #ifdef __cplusplus
 }

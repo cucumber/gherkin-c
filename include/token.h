@@ -2,6 +2,8 @@
 #define GHERKIN_TOKEN_H_
 
 #include <wchar.h>
+
+#include "exports.h"
 #include "item.h"
 #include "location.h"
 #include "gherkin_line.h"
@@ -40,13 +42,13 @@ typedef struct Token {
     const wchar_t* matched_language;
 } Token;
 
-Token* Token_new(const GherkinLine* gherkin_line, int line);
+GHERKIN_EXPORT Token* Token_new(const GherkinLine* gherkin_line, int line);
 
-void Token_delete(Token* token);
+GHERKIN_EXPORT void Token_delete(Token* token);
 
-void Token_delete_matched_items(const Items* items);
+GHERKIN_EXPORT void Token_delete_matched_items(const Items* items);
 
-bool Token_is_eof(Token* token);
+GHERKIN_EXPORT bool Token_is_eof(Token* token);
 
 #ifdef __cplusplus
 }

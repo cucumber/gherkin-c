@@ -7,13 +7,13 @@
 
 typedef struct Builder Builder;
 
-typedef void (*builder_reset_function) (Builder*);
+GHERKIN_EXPORT typedef void (*builder_reset_function) (Builder*);
 
-typedef void (*builder_error_context_function) (Builder*, ErrorList*);
+GHERKIN_EXPORT typedef void (*builder_error_context_function) (Builder*, ErrorList*);
 
-typedef void (*build_function) (Builder*, Token*);
+GHERKIN_EXPORT typedef void (*build_function) (Builder*, Token*);
 
-typedef void (*rule_function) (Builder*, RuleType);
+GHERKIN_EXPORT typedef void (*rule_function) (Builder*, RuleType);
 
 struct Builder {
     builder_reset_function reset;

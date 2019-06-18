@@ -5,6 +5,7 @@
 
 #include "ast.h"
 #include "location.h"
+#include "exports.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -22,13 +23,13 @@ typedef struct Comments {
     Comment* comments;
 } Comments;
 
-Comment* Comment_new(Location location, const wchar_t* text);
+GHERKIN_EXPORT Comment* Comment_new(Location location, const wchar_t* text);
 
-void Comment_delete(const Comment* comment);
+GHERKIN_EXPORT void Comment_delete(const Comment* comment);
 
-void Comment_transfer(Comment* to_comment, Comment* from_comment);
+GHERKIN_EXPORT void Comment_transfer(Comment* to_comment, Comment* from_comment);
 
-void Comments_delete(const Comments* comments);
+GHERKIN_EXPORT void Comments_delete(const Comments* comments);
 
 #ifdef __cplusplus
 }
